@@ -28,7 +28,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: pfuenzle/anime-loads
+          images: noxsystems/anime-loads
       
       - name: Set up QEMU
         uses: docker/setup-qemu-action@master
@@ -46,7 +46,7 @@ jobs:
           context: ./docker/amd64+arm64/
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: pfuenzle/anime-loads:latest
+          tags: noxsystems/anime-loads:latest
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Build and push Docker image ARM7
@@ -56,5 +56,5 @@ jobs:
           context: ./docker/arm7/
           platforms: linux/arm
           push: true
-          tags: pfuenzle/anime-loads:arm
+          tags: noxsystems/anime-loads:arm
           labels: ${{ steps.meta.outputs.labels }}

@@ -1,0 +1,67 @@
+{
+    "anime": [
+        {
+            "customPackage": "My Hero Academia",
+            "destinationFolder": "F:\\Animes\\My Hero Academia\\Staffel 06",
+            "episodes": 21,
+            "missing": [],
+            "name": "My Hero Academia",
+            "releaseID": 2,
+            "url": "https://www.anime-loads.org/media/boku-no-hero-academia-6"
+        },
+        {
+            "customPackage": "Mob Psycho 100 III",
+            "destinationFolder": "F:\\Animes\\Mob Psycho 100\\Staffel 03",
+            "episodes": 12,
+            "missing": [],
+            "name": "Mob Psycho 100 III",
+            "releaseID": 2,
+            "url": "https://www.anime-loads.org/media/mob-psycho-100-iii"
+        },
+        {
+            "customPackage": "Call of the Night",
+            "destinationFolder": "F:\\Animes\\Call of the Night\\Staffel 01",
+            "episodes": 13,
+            "missing": [],
+            "name": "Call of the Night",
+            "releaseID": 1,
+            "url": "https://www.anime-loads.org/media/yofukashi-no-uta"
+        },
+        {
+            "customPackage": "Akiba Maid War",
+            "destinationFolder": "F:\\Animes\\Akiba Maid War\\Staffel 01",
+            "episodes": 12,
+            "missing": [],
+            "name": "Akiba Maid War",
+            "releaseID": 2,
+            "url": "https://www.anime-loads.org/media/akiba-maid-sensou"
+        },
+        {
+            "customPackage": "Urusei Yatsura",
+            "destinationFolder": "F:\\Animes\\Urusei Yatsura\\Staffel 01",
+            "episodes": 12,
+            "missing": [],
+            "name": "Urusei Yatsura",
+            "releaseID": 2,
+            "url": "https://www.anime-loads.org/media/urusei-yatsura-2022"
+        },
+        {
+            "customPackage": "Chainsaw Man",
+            "destinationFolder": "F:\\Animes\\Chainsaw Man\\Staffel 01",
+            "episodes": 12,
+            "missing": [],
+            "name": "Chainsaw Man",
+            "releaseID": 2,
+            "url": "https://www.anime-loads.org/media/chainsaw-man"
+        },
+        {
+            "customPackage": "Bluelock",
+            "destinationFolder": "F:\\Animes\\Bluelock\\Staffel 01",
+            "episodes": 19,
+            "missing": [],
+            "name": "Bluelock",
+            "releaseID": 2,
+            "url": "https://www.anime-loads.org/media/blue-lock"
+        }
+    ]
+}
