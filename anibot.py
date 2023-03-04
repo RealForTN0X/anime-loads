@@ -17,6 +17,7 @@ import myjdapi
 pb = ""
 
 botfile = "config/ani.json"
+settingsfile = "config/settings.json"
 botfolder = "config/"
 
 def is_docker():
@@ -49,12 +50,12 @@ def printException(e):
 def loadconfig():
     try:
         os.makedirs(os.path.dirname(botfolder), exist_ok=True)
-        infile = open(botfile, "r")
+        infile = open(settingsfile, "r")
         data = json.load(infile)
         infile.close()
     except Exception as e:
         printException(e)
-        print("ani.json nicht gefunden, ")
+        print("settings.json nicht gefunden, ")
         return False, False, False, False, False, False, False, False, False, False, False
     for key in data:
         if(key == "settings"):
@@ -71,7 +72,7 @@ def loadconfig():
                 myjd_device = value['myjd_device']
             except Exception as e:
                 printException(e)
-                print("Fehlerhafte ani.json Konfiguration")
+                print("Fehlerhafte settings.json Konfiguration")
                 return False, False, False, False, False, False, False, False, False, False, False
             try:
                 al_user = value['al_user']
@@ -84,7 +85,7 @@ def loadconfig():
 def editconfig():
     try:
         os.makedirs(os.path.dirname(botfolder), exist_ok=True)
-        infile = open(botfile, "r")
+        infile = open(settingsfile, "r")
         data = json.load(infile)
         infile.close()
         for key in data:
@@ -272,7 +273,7 @@ def editconfig():
 
     try:
         os.makedirs(os.path.dirname(botfolder), exist_ok=True)
-        f = open(botfile, "r")
+        f = open(settingsfile, "r")
         data = json.load(f)
         infile.close()
     except:
@@ -281,14 +282,14 @@ def editconfig():
     if(ani_exists):
         data['settings'] = settingsdata
         os.makedirs(os.path.dirname(botfolder), exist_ok=True)
-        jfile = open(botfile, "w")
+        jfile = open(settingsfile, "w")
         jfile.write(json.dumps(data, indent=4, sort_keys=True))
         jfile.flush()
         jfile.close
     else:
         settingsdata = {"settings": settingsdata}
         os.makedirs(os.path.dirname(botfolder), exist_ok=True)
-        jfile = open(botfile, "w")
+        jfile = open(settingsfile, "w")
         jfile.write(json.dumps(settingsdata, indent=4, sort_keys=True))
         jfile.flush()
         jfile.close
@@ -749,6 +750,7 @@ def startbot():
                             jfile.close
                 else:
                     print("[INFO]" + name + " hat keine neuen Folgen verfügbar")
+            //Upload modified config
             print("Schlafe " + str(timedelay) + " Sekunden")
             time.sleep(timedelay)
 
