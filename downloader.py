@@ -56,25 +56,30 @@ def settings():
         jd_pass = ""
         jd_device = ""
 
-    if(hoster == 1):
+    if(hoster == 2):
         hosterstr = "rapidgator"
-    elif(hoster == 0):
+    if(hoster == 1):
         hosterstr = "ddownload"
+    elif(hoster == 0):
+        hosterstr = "uploaded"
     changehoster  = True
     if(hoster != ""):
         if(compare(input("Dein gewählter hoster: " + hosterstr + ", möchtest du ihn wechseln? [J/N]: "), {"j", "ja", "yes", "y"}) == False):
             changehoster = False
     if(changehoster):
         while(True):
-            host = input("Welchen hoster bevorzugst du? rapidgator oder ddownload: ")
-            if("ddownload" in host):
+            host = input("Welchen hoster bevorzugst du? rapidgator, uploaded oder ddownload: ")
+            if("uploaded" in host):
+                hoster = animeloads.UPLOADED
+                break
+            elif("ddownload" in host):
                 hoster = animeloads.DDOWNLOAD
                 break
             elif("rapidgator" in host):
                 hoster = animeloads.RAPIDGATOR
                 break
             else:
-                print("Bitte gib entweder rapidgator oder ddowwnload ein")
+                print("Bitte gib entweder uploaded, rapidgator oder ddowwnload ein")
 
     changemode = True
     if(mode != ""):
@@ -407,6 +412,7 @@ def interactive():
     print("Programm wird beendet, vielen Dank fürs benutzen")
 
 if(arglen > 1):
+    al = animeloads()
     for arg in sys.argv:
         if("--help" in arg):
             print("Syntax: <downloader.py> [--url URL] [--user username] [--passwd password] [--list listfile] [--release release] [--episode episode] [--hoster hoster] [--jd 127.0.0.1] [--browser chrome] [--browserloc Browserpfad] [--myjd_user username/email] [--myjd_pw password] [--myjd_device Devicename]")
@@ -445,15 +451,17 @@ if(arglen > 1):
         if(sys.argv[i] == "--hoster"):
             try:
                 hoster = sys.argv[i+1]
-                if("ddownload".lower() in hoster.lower()):
+                if("uploaded".lower() in hoster.lower()):
+                    hoster = animeloads.UPLOADED
+                elif("ddownload".lower() in hoster.lower()):
                     hoster = animeloads.DDOWNLOAD
                 elif("rapidgator".lower() in hoster.lower()):
-                    hoster = animeloads.RAPIDGATOR
+                    hoster = animeloads.rapidgator
                 else:
                     raise Exception()
                 print("Set hoster to " + sys.argv[i+1])
             except:
-                print("Error, invalid hoster [only \"rapidgator\" or \"ddownload\"]: " + hoster)
+                print("Error, invalid hoster [only \"uploaded\", \"rapidgator\" or \"ddownload\"]: " + hoster)
                 sys.exit(1)
         
         if(sys.argv[i] == "--jd"):
